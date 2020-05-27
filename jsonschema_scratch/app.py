@@ -2,7 +2,9 @@ import flask
 
 
 def create_app():
-    app = flask.Flask(__name__)
+    app = flask.Flask(
+        __name__, static_url_path="/schemas", static_folder="../schemas"
+    )
 
     @app.route("/")
     def foo():

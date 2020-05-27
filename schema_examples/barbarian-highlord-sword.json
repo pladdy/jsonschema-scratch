@@ -1,0 +1,11 @@
+{
+  "damage-types": ["edged"],
+  "name": "the barbarian highlord's sword (enchanted)",
+  "description": "The sword has been passed down for generations by the barbarian tribes, and each generation has left some mark upon the sword to signify their time.  The sword is immaculately clean-looking, with a razor sharp blade lacking the nicks that adorn the other barbarian weapons.  The handle appears to made out of solid granite shaped so finely, that it looks to be the work of something other than human hands.  There is an empty socket in the handle of the sword, as if someting could be fitted there, but is absent at the moment.",
+  "enchanted": true,
+  "specials": [
+    "with 'strange orb' in the sword ('fit orb'), will randomly give +1-39 attacks"
+  ],
+  "required-level": 17,
+  "type": "sword",
+}
