@@ -1,11 +1,26 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "definitions": {
-    "item": {
-      "type": "object",
-      "properties": {
-        "name": {"type": "string"}
-      }
+  "type": "object",
+  "properties": {
+    "description": {"type": "string"},
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "axe",
+        "bow",
+        "dagger",
+        "exotic",
+        "gun",
+        "lance",
+        "mace",
+        "polearm",
+        "sword",
+      ]
     }
-  }
+  },
+  "required": ["name", "type"]
 }
