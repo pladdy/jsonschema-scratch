@@ -3,7 +3,7 @@
 APP = jsonschema_scratch
 TESTS = tests
 
-TEST = poetry run pytest -x -s -rA --durations=0 -v --cov $(APP) $(TESTS)
+TEST = poetry run pytest -x -s -rA --durations=10 -vv --cov $(APP) $(TESTS)
 
 bump-patch:
 	poetry run bumpversion patch

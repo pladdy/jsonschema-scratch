@@ -7,5 +7,5 @@
     "with 'strange orb' in the sword ('fit orb'), will randomly give +1-39 attacks"
   ],
   "required-level": 17,
-  "type": "sword",
+  "type": "sword"
 }

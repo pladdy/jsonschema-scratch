@@ -39,5 +39,6 @@ References
 ==========
 
 - `Flask API <https://flask.palletsprojects.com/en/1.1.x/api/>`_
+  - `Routing <https://flask.palletsprojects.com/en/1.1.x/api/#url-route-registrations>`_
 - `Understanding JSON Schema <https://json-schema.org/understanding-json-schema/>`_
 - `Serving static filesin Flask <https://stackoverflow.com/questions/20646822/how-to-serve-static-files-in-flask>`_
