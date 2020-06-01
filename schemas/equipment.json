@@ -1,0 +1,31 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"properties": {
+		"description": {
+			"type": "string"
+		},
+		"name": {
+			"type": "string",
+			"minLength": 1
+		},
+		"type": {
+			"type": "string",
+			"enum": [
+				"amulet",
+        "boots",
+        "breastplate",
+        "cloak",
+        "gloves",
+        "helmet",
+        "main",
+        "other",
+        "ring",
+        "shield",
+        "special",
+        "unknown"
+			]
+		}
+	},
+	"required": ["name", "type"]
+}

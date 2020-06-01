@@ -8,6 +8,13 @@ Goals:
 
 - complex JSON schemas that can be resolved if they have references
   - IE DRY up schemas by sharing components but be able to view a schema de-referenced´
+- store schemas in an embedded db (sqlite?)?  or just use the file system?
+  - sqlite has json functions
+  - instead of a file structure just have table(s)
+  - if i use a db schemas need to be easy to discover (ie see a list like a filesystem?)
+    - how do i list them now in flask?
+- version schemas so you can update them
+  - not sure if it makes sense to require a version # in the json schema, but perhaps in the db?
 
 API
 ---
@@ -19,7 +26,7 @@ API
   - shows the schema file, might have $refs in it
 - [ ] ``GET /schemas/<some-schema-file.json>?resolve``
   - shows the schema file but resolved, refs file refs substituted (not local refs though)
-- [ ] ``POST /schemas/<some-schema-file.json>?validate``
+- [x] ``POST /schemas/<some-schema-file.json>?validate``
   - this doesn't seem like the right interface...
 
   .. code-block:: JSON
@@ -32,8 +39,11 @@ API
 TODO
 ----
 
+- when calling /schemas/ to view, if it's a dir, create links to the files so you can just click on it
+- create validate blueprint and a schemas blueprint?
+- print exceptions better, look into traceback
+  - https://docs.python.org/3.8/library/traceback.html
 - can post a schema
-- can validate an object against a schema
 
 References
 ==========
