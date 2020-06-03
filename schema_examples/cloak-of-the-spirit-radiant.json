@@ -1,0 +1,6 @@
+{
+  "name": "cloak of the spirit {radiant}",
+  "description": "This cloak is infused with the sun-yellow power of Tipharet.  To obtain it, one must be in mastery of the lower five Sephiroth on the Tree of Life.",
+  "type": "cloak",
+  "armor-class-types": ["edged", "blunt", "mind", "energy"]
+}

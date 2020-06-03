@@ -1,31 +1,50 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
+	"description": "An item worn by a character, typically to increase armor class.",
 	"type": "object",
-	"properties": {
-		"description": {
-			"type": "string"
-		},
-		"name": {
-			"type": "string",
-			"minLength": 1
-		},
-		"type": {
-			"type": "string",
-			"enum": [
-				"amulet",
-        "boots",
-        "breastplate",
-        "cloak",
-        "gloves",
-        "helmet",
-        "main",
-        "other",
-        "ring",
-        "shield",
-        "special",
-        "unknown"
-			]
+	"allOf": [
+		{ "$ref": "http://localhost:5000/schemas/definitions.json#/definitions/item" },
+		{
+			"properties": {
+				"type": {
+					"description": "The type of the equipment, where it'd be worn on a character.",
+					"type": "string",
+					"enum": [
+						"amulet",
+		        "boots",
+		        "breastplate",
+		        "cloak",
+		        "gloves",
+		        "helmet",
+		        "main",
+		        "other",
+		        "ring",
+		        "shield",
+		        "special",
+		        "unknown"
+					]
+				},
+				"armor-class-types": {
+					"description": "The types of damage the equipment helps block.",
+					"type": "array",
+					"items": {
+						"type": "string",
+						"enum": [
+							"edged",
+							"blunt",
+							"fire",
+							"ice",
+							"acid",
+							"electric",
+							"mind",
+							"energy",
+							"poison",
+							"radiation"
+						]
+					}
+				}
+			},
+			"required": ["armor-class-types", "type"]
 		}
-	},
-	"required": ["name", "type"]
+  ]
 }

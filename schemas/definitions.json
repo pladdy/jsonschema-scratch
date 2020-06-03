@@ -1,13 +1,16 @@
 {
   "definitions": {
     "item": {
+      "description": "Anything that can be picked up and be in your inventory.",
       "type": "object",
       "properties": {
         "description": {
+          "description": "A text that describes the item, seen by 'look'ing at the item.",
           "type": "string",
           "minLength": 1
         },
         "name": {
+          "description": "What the item is called.",
           "type": "string",
           "minLength": 1
         }

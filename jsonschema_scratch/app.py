@@ -39,6 +39,7 @@ def create_app():
     @app.route("/validate", methods=["POST"])
     def validate():
         schema = flask.request.args.get("schema")
+
         if schema is None:
             flask.abort(
                 http.HTTPStatus.BAD_REQUEST,
