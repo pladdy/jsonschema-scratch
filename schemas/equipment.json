@@ -1,5 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "http://localhost:5000/schemas/equipment.json",
+
 	"description": "An item worn by a character, typically to increase armor class.",
 	"type": "object",
 	"allOf": [

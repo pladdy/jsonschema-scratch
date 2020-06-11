@@ -9,6 +9,7 @@ license = "MIT"
 python = "^3.6"
 flask = "~=1.1"
 jsonschema = "~=3.2"
+jsonref = "^0.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "~=5.3"

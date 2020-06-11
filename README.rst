@@ -39,6 +39,7 @@ API
 TODO
 ----
 
+- can resolve a schema
 - when calling /schemas/ to view, if it's a dir, create links to the files so you can just click on it
 - create validate blueprint and a schemas blueprint?
 - print exceptions better, look into traceback
@@ -56,9 +57,17 @@ References
 - `Flask API <https://flask.palletsprojects.com/en/1.1.x/api/>`_
   - `Flask Source <https://github.com/pallets/flask>`_
   - `Routing <https://flask.palletsprojects.com/en/1.1.x/api/#url-route-registrations>`_
+  - `Config <https://flask.palletsprojects.com/en/1.1.x/api/#configuration>`_
   - `Patterns <https://flask.palletsprojects.com/en/1.1.x/patterns/>`_
 - `Werkzeug Source <https://github.com/pallets/werkzeug>`_
 - `Understanding JSON Schema <https://json-schema.org/understanding-json-schema/>`_
 - `Serving static files in Flask <https://stackoverflow.com/questions/20646822/how-to-serve-static-files-in-flask>`_
 - `Explore flask patterns <https://exploreflask.com/en/latest/index.html>`_
 - `HTTP Status Codes <https://developer.mozilla.org/en-US/docs/Web/HTTP/Status>`_
+- `JSONRef <https://github.com/gazpachoking/jsonref>`_
+  - `JSONRef Example <https://medium.com/grammofy/handling-complex-json-schemas-in-python-9eacc04a60cf>`_
+
+Tools
+-----
+
+- `JSON Schema Validation <https://www.jsonschemavalidator.net/>`_

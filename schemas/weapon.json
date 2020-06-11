@@ -1,5 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "http://localhost:5000/schemas/weapon.json",
+
 	"description": "A weapon used by a character or NPC.",
 	"type": "object",
 	"allOf": [

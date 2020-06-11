@@ -1,10 +1,11 @@
 import flask
 import http
 import json
+import jsonref
 import jsonschema
 import os
 
-import jsonschema_scratch.errors as errors
+import errors
 
 SCHEMAS_DIR_NAME = "schemas"
 SCHEMAS_RELATIVE_PATH = "../schemas"
@@ -24,9 +25,7 @@ def create_app():
             path = os.path.join(SCHEMAS_DIR_NAME, filename)
 
             if os.path.isfile(path):
-                return flask.send_from_directory(
-                    SCHEMAS_RELATIVE_PATH, filename
-                )
+                return render_schema(path, filename)
             if os.path.isdir(path):
                 return flask.jsonify({"files": [os.listdir(path)]})
         except Exception as e:
@@ -77,6 +76,13 @@ def create_app():
             )
 
     return app
+
+
+def render_schema(path, filename):
+    if "resolve" in flask.request.args.keys():
+        with open(path) as schema:
+            return flask.jsonify(jsonref.loads(schema.read()))
+    return flask.send_from_directory(SCHEMAS_RELATIVE_PATH, filename)
 
 
 def validate_against_schema(document, schema):
