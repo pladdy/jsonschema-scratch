@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://localhost:5000/schemas/definitions.json",
+
+  "definitions": {
+    "item": {
+      "description": "Anything that can be picked up and be in your inventory.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "description": "A text that describes the item, seen by 'look'ing at the item.",
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "description": "What the item is called.",
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": ["description", "name"]
+    }
+  }
+}

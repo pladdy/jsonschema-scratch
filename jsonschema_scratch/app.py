@@ -1,12 +1,16 @@
 import flask
 
+from . import errors
+from . import validate
+from . import schema
+
 
 def create_app():
     app = flask.Flask(__name__)
+    app = errors.add_error_handlers(app)
 
-    @app.route("/")
-    def foo():
-        return flask.jsonify({"message": "hello"})
+    app.register_blueprint(validate.bp)
+    app.register_blueprint(schema.bp)
 
     return app
 
