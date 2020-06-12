@@ -27,8 +27,6 @@ lint: format security
 	poetry run flake8 $(APP) $(TESTS)
 
 run-debug:
-	# DEBUG=1 FLASK_ENV=development FLASK_APP=$(APP)/app.py poetry run flask run
-	# or
 	DEBUG=1 FLASK_ENV=development poetry run python jsonschema_scratch/app.py
 
 security:

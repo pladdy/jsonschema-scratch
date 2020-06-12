@@ -19,27 +19,11 @@ Goals:
 API
 ---
 
-0.1.0
-~~~~~
 
-- [x] ``GET /schemas/<some-schema-file.json>``
-  - shows the schema file, might have $refs in it
-- [ ] ``GET /schemas/<some-schema-file.json>?resolve``
-  - shows the schema file but resolved, refs file refs substituted (not local refs though)
-- [x] ``POST /schemas/<some-schema-file.json>?validate``
-  - this doesn't seem like the right interface...
-
-  .. code-block:: JSON
-
-    {
-      "schema": "",
-      "document": {}
-    }
 
 TODO
 ----
 
-- can resolve a schema
 - when calling /schemas/ to view, if it's a dir, create links to the files so you can just click on it
 - create validate blueprint and a schemas blueprint?
 - print exceptions better, look into traceback

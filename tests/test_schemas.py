@@ -2,13 +2,13 @@ import json
 import os
 import pytest
 
-from jsonschema_scratch.app import SCHEMAS_DIR_NAME
+from jsonschema_scratch import config
 
 
 @pytest.fixture
 def schemas():
     schema_files = []
-    for dirpath, dirnames, filenames in os.walk(SCHEMAS_DIR_NAME):
+    for dirpath, dirnames, filenames in os.walk(config.SCHEMAS_DIR_NAME):
         schema_files += [
             os.path.join(dirpath, filename) for filename in filenames
         ]
