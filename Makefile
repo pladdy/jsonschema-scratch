@@ -21,6 +21,10 @@ cov-reports:
 cover: cov-reports
 	open htmlcov/index.html
 
+cover-codacy: cov-reports
+	poetry run coverage xml
+	source .env && poetry run python-codacy-coverage -r coverage.xml
+
 format:
 	poetry run black -l 80 $(APP) $(TESTS)
 

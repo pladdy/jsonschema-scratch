@@ -2,4 +2,7 @@
 *.egg*
 
 .coverage
+.env
+
+coverage.xml
 htmlcov/
