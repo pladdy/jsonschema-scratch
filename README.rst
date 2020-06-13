@@ -1,7 +1,7 @@
 jsonschema-scratch
 ==================
 
-|build-status| |code coverage| |codacy|
+|build-status| |code coverage| |codacy| |MIT license|
 
 .. |build-status| image:: https://travis-ci.com/pladdy/jsonschema-scratch.svg?branch=master
     :alt: build status
@@ -17,6 +17,11 @@ jsonschema-scratch
   :alt: codacy
   :scale: 100%
   :target: https://www.codacy.com/manual/pladdy/jsonschema-scratch?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pladdy/jsonschema-scratch&amp;utm_campaign=Badge_Grade
+
+.. |MIT license| image:: https://img.shields.io/badge/License-MIT-blue.svg
+  :alt: MIT license
+  :scale: 100%
+  :target: https://lbesson.mit-license.org/
 
 This is a jsonschema and flask sandbox.  This enables setting up some jsonschemas and make
 them available via a HTTP interface.
