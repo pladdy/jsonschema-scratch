@@ -1,6 +1,10 @@
 jsonschema-scratch
 ==================
 
+.. image:: https://api.codacy.com/project/badge/Grade/b3f5eb946b9744d4858cb58967c44263
+   :alt: Codacy Badge
+   :target: https://app.codacy.com/manual/pladdy/jsonschema-scratch?utm_source=github.com&utm_medium=referral&utm_content=pladdy/jsonschema-scratch&utm_campaign=Badge_Grade_Dashboard
+
 This is a jsonschema and flask sandbox.  This enables setting up some jsonschemas and make
 them available via a HTTP interface.
 
