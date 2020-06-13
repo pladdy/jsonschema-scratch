@@ -1,10 +1,28 @@
 jsonschema-scratch
 ==================
 
+|build-status| |code coverage| |codacy|
+
+.. |build-status| image:: https://travis-ci.com/pladdy/jsonschema-scratch.svg?branch=master
+    :alt: build status
+    :scale: 100%
+    :target: https://travis-ci.com/pladdy/jsonschema-scratch
+
+.. |code coverage| image:: https://codecov.io/gh/pladdy/jsonschema-scratch/branch/master/graph/badge.svg
+  :alt: code coverage
+  :scale: 100%
+  :target: https://codecov.io/gh/pladdy/jsonschema-scratch
+
+.. |codacy| image:: https://app.codacy.com/project/badge/Grade/454e2ed095ed4a41b545b949a7343c30
+  :alt: codacy
+  :scale: 100%
+  :target: https://www.codacy.com/manual/pladdy/jsonschema-scratch?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pladdy/jsonschema-scratch&amp;utm_campaign=Badge_Grade
+
 This is a jsonschema and flask sandbox.  This enables setting up some jsonschemas and make
 them available via a HTTP interface.
 
-Goals:
+Goals / Ideas
+-------------
 
 - complex JSON schemas that can be resolved if they have references
   - IE DRY up schemas by sharing components but be able to view a schema de-referenced´
@@ -19,7 +37,7 @@ Goals:
 API
 ---
 
-
+Document with swagger/openapi and/or use connexion?
 
 TODO
 ----
