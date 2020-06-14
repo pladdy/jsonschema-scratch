@@ -52,11 +52,6 @@ TODO
 - print exceptions better, look into traceback
   - https://docs.python.org/3.8/library/traceback.html
 - can post a schema
-- how should the ref urls in the schemas be set up?
-  - file uris need to be absolute path...link /var/data/schemas to ./schemas?
-  - http uris need to be the url, but putting localhost:5000 in there seems dumb...
-  - file uri seems best?
-  - use http://localhost:5000 for now...
 
 References
 ==========
@@ -73,6 +68,15 @@ References
 - `HTTP Status Codes <https://developer.mozilla.org/en-US/docs/Web/HTTP/Status>`_
 - `JSONRef <https://github.com/gazpachoking/jsonref>`_
   - `JSONRef Example <https://medium.com/grammofy/handling-complex-json-schemas-in-python-9eacc04a60cf>`_
+
+Refs and $ref URIs
+------------------
+
+It's possible to use relative file urls in the schemas as long as a base-uri is set to an absolute
+file URI for jsonref and a RefResolver objects being used.
+
+- https://github.com/Julian/jsonschema/issues/98
+- https://jsonref.readthedocs.io/en/latest/#jsonref.loads
 
 Tools
 -----

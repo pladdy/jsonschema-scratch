@@ -3,7 +3,7 @@ import http
 import jsonref
 import os
 
-from . import config
+from jsonschema_scratch import config
 
 # An alternate way to serve static files is using static* params:
 #
@@ -18,7 +18,11 @@ bp = flask.Blueprint("schemas", __name__)
 def render_schema(path, filename):
     if "resolve" in flask.request.args.keys():
         with open(path) as schema:
-            return flask.jsonify(jsonref.loads(schema.read()))
+            print(path)
+            print(config.SCHEMAS_ABS_DIR)
+            return flask.jsonify(
+                jsonref.loads(schema.read(), base_uri=config.SCHEMAS_BASE_URI)
+            )
     return flask.send_from_directory(config.SCHEMAS_RELATIVE_PATH, filename)
 
 

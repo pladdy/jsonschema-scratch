@@ -1,8 +1,8 @@
 import flask
 
-from . import errors
-from . import validate
-from . import schema
+from jsonschema_scratch import errors
+from jsonschema_scratch import validate
+from jsonschema_scratch import schema
 
 
 def create_app():

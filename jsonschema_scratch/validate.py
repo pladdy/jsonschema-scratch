@@ -4,7 +4,7 @@ import json
 import jsonschema
 import os
 
-from . import config
+from jsonschema_scratch import config
 
 bp = flask.Blueprint("validate", __name__)
 
@@ -54,8 +54,11 @@ def validate():
 
 def validate_against_schema(document, schema):
     try:
+        resolver = jsonschema.RefResolver(config.SCHEMAS_BASE_URI, None)
         jsonschema.validate(
-            instance=json.loads(flask.request.data), schema=schema
+            instance=json.loads(flask.request.data),
+            schema=schema,
+            resolver=resolver,
         )
         return True, "valid"
     except jsonschema.exceptions.ValidationError as e:
