@@ -38,6 +38,9 @@ POETRY_VERSION = 1.0.9
 poetry:
 	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/$(POETRY_VERSION)/get-poetry.py | python
 
+release:
+	git push && git push --tags
+
 requirements.txt:
 	poetry run dephell deps converts --from-format=poetry --from-path=pyproject.toml --to-format=pip --to-path=$@
 

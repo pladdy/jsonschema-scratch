@@ -68,6 +68,7 @@ References
 - `HTTP Status Codes <https://developer.mozilla.org/en-US/docs/Web/HTTP/Status>`_
 - `JSONRef <https://github.com/gazpachoking/jsonref>`_
   - `JSONRef Example <https://medium.com/grammofy/handling-complex-json-schemas-in-python-9eacc04a60cf>`_
+- `Dephell <https://dephell.readthedocs.io/>`_
 
 Refs and $ref URIs
 ------------------
