@@ -1,19 +1,22 @@
-.PHONY: bump-patch bump-minor bump-major poetry run-debug
-.PHONY: format lint security vulnerability
-.PHONY: cov-reports cover test
+.PHONY: requirements.txt
 
 APP = jsonschema_scratch
 TEST = poetry run pytest -x -s -rA --durations=10 -vv --cov $(APP) $(TESTS)
 TESTS = tests
 
+all:
+	poetry install
+
 bump-patch:
-	poetry run bumpversion patch
+	poetry run dephell project bump patch
 
 bump-minor:
-	poetry run bumpversion minor
+	poetry run dephell project bump minor
 
 bump-major:
-	poetry run bumpversion major
+	poetry run dephell project bump major
+
+clean:
 
 cov-reports:
 	$(TEST) --cov-report html
@@ -38,14 +41,17 @@ POETRY_VERSION = 1.0.9
 poetry:
 	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/$(POETRY_VERSION)/get-poetry.py | python
 
+pre-commit-run:
+	poetry run pre-commit run --all-files
+
 release:
 	git push && git push --tags
 
 requirements.txt:
-	poetry run dephell deps converts --from-format=poetry --from-path=pyproject.toml --to-format=pip --to-path=$@
+	poetry run dephell deps converts --to-format=pip --to-path=$@
 
 run-debug:
-	DEBUG=1 FLASK_ENV=development poetry run python jsonschema_scratch/app.py
+	DEBUG=1 FLASK_ENV=development poetry run python $(APP)/app.py
 
 security:
 	poetry run bandit -r $(APP)

@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07//schema#",
+  "$id": "bag.json",
+
+  "description": "An item that carries other items.",
+  "type": "object",
+  "allOf": [
+    { "$ref": "definitions.json#/definitions/item" }
+  ],
+  "properties": {
+    "items": {
+      "type": "array",
+      "items":  { "$ref": "definitions.json#/definitions/item" }
+    }
+  }
+}
