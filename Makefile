@@ -1,11 +1,11 @@
 .PHONY: requirements.txt
 
 APP = jsonschema_scratch
-TEST = poetry run pytest -x -s -rA --durations=10 -vv --cov $(APP) $(TESTS)
-TESTS = tests
+TEST = poetry run pytest -x -s -rA --durations=10 -vv --cov $(APP) $(TEST_DIR)
+TEST_DIR = tests
 
-all:
-	poetry install
+all: install
+	poetry run pre-commit install
 
 bump-patch:
 	poetry run dephell project bump patch
@@ -29,13 +29,13 @@ cover-codacy: cov-reports
 	source .env && poetry run python-codacy-coverage -r coverage.xml
 
 format:
-	poetry run black -l 80 $(APP) $(TESTS)
+	poetry run black -l 80 $(APP) $(TEST_DIR)
 
 install:
 	poetry install
 
 lint: format security
-	poetry run flake8 $(APP) $(TESTS)
+	poetry run flake8 $(APP) $(TEST_DIR)
 
 POETRY_VERSION = 1.0.9
 poetry:
