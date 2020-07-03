@@ -59,5 +59,10 @@ security:
 test:
 	$(TEST)
 
+update: update-with-poetry requirements.txt
+
+update-with-poetry:
+	poetry update
+
 vulnerability:
 	poetry run safety check
