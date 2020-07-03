@@ -17,6 +17,9 @@ bump-major:
 	poetry run dephell project bump major
 
 clean:
+	find ./ -type d -name *__pycache__ -exec rm -rf {} \;
+	rm .coverage coverage.xml
+	rm -rf .pytest_cache htmlcov
 
 cov-reports:
 	$(TEST) --cov-report html

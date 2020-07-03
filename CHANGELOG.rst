@@ -3,7 +3,30 @@ Changelog
 
 Project changes based on `changelog <https://keepachangelog.com/en/1.0.0/>`_ format.
 
-[0.2.0] - 2020-06-16
+[0.2.2] - 2020-07-03
+~~~~~~~~~~~~~~~~~~~~
+
+Added
+-----
+
+- pre-commit
+
+Changed
+-------
+
+- Bump versions with dephell
+
+Fixed
+-----
+
+- Changelog history
+
+Removed
+-------
+
+- bumpversion
+
+[0.2.1] - 2020-06-16
 ~~~~~~~~~~~~~~~~~~~~
 
 Fixed
@@ -15,9 +38,9 @@ Added
 -----
 
 - badges for build, codacy, coverage, and license
-- dephell with a requirements.txt file
+- dephell which created a requirements.txt file
 
-[0.1.0] - 2020-06-12
+[0.2.0] - 2020-06-16
 ~~~~~~~~~~~~~~~~~~~~
 
 Added
