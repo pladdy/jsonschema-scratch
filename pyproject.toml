@@ -6,7 +6,7 @@ tag = "v"
 
 [tool.poetry]
 name = "jsonschema-scratch"
-version = "0.2.2"
+version = "0.2.3"
 description = "Playground for messing with json schemas."
 authors = ["Matt Pladna <pladdypants@gmail.com>"]
 license = "MIT"
@@ -29,6 +29,7 @@ pytest-cov = "==2.*,>=2.10.0"
 codecov = "==2.1.*,>=2.1.4"
 dephell = "==0.*,>=0.8.3"
 pre-commit = "==2.6.*,>=2.6.0"
+
 
 
 [build-system]
