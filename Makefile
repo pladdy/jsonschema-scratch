@@ -1,20 +1,26 @@
 .PHONY: requirements.txt
 
 APP = jsonschema_scratch
+
+POETRY_VERSION = 1.0.9
+
 TEST = poetry run pytest -x -s -rA --durations=10 -vv --cov $(APP) $(TEST_DIR)
 TEST_DIR = tests
 
-all: install
+all: poetry install
 	poetry run pre-commit install
 
-bump-patch:
-	poetry run dephell project bump patch
+bump-major:
+	poetry run dephell project bump major
 
 bump-minor:
 	poetry run dephell project bump minor
 
-bump-major:
-	poetry run dephell project bump major
+bump-patch:
+	poetry run dephell project bump patch
+
+bump-reset:
+	git reset HEAD~1
 
 clean:
 	find ./ -type d -name *__pycache__ -exec rm -rf {} \;
@@ -31,16 +37,14 @@ cover-codacy: cov-reports
 	poetry run coverage xml
 	source .env && poetry run python-codacy-coverage -r coverage.xml
 
-format:
-	poetry run black -l 80 $(APP) $(TEST_DIR)
-
 install:
 	poetry install
 
-lint: format security
+lint:
+	poetry run black -l 80 $(APP) $(TEST_DIR)
 	poetry run flake8 $(APP) $(TEST_DIR)
+	poetry run bandit -r $(APP)
 
-POETRY_VERSION = 1.0.9
 poetry:
 	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/$(POETRY_VERSION)/get-poetry.py | python
 
@@ -55,9 +59,6 @@ requirements.txt:
 
 run-debug:
 	DEBUG=1 FLASK_ENV=development poetry run python $(APP)/app.py
-
-security:
-	poetry run bandit -r $(APP)
 
 test:
 	$(TEST)
