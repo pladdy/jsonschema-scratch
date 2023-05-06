@@ -11,13 +11,13 @@ all: poetry install
 	poetry run pre-commit install
 
 bump-major:
-	poetry run dephell project bump major
+	echo install bumpversion
 
 bump-minor:
-	poetry run dephell project bump minor
+	echo install bumpversion
 
 bump-patch:
-	poetry run dephell project bump patch
+	echo install bumpversion
 
 bump-reset:
 	git reset HEAD~1
