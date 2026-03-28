@@ -40,11 +40,6 @@ cover-codacy: cov-reports
 install:
 	poetry install
 
-lint:
-	poetry run black -l 80 $(APP) $(TEST_DIR)
-	poetry run flake8 $(APP) $(TEST_DIR)
-	poetry run bandit -r $(APP)
-
 poetry:
 	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/$(POETRY_VERSION)/get-poetry.py | python
 
@@ -53,9 +48,6 @@ pre-commit-run:
 
 release:
 	git push && git push --tags
-
-requirements.txt:
-	poetry run dephell deps converts --to-format=pip --to-path=$@
 
 run-debug:
 	DEBUG=1 FLASK_ENV=development poetry run python $(APP)/app.py
